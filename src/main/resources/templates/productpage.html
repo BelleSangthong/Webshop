@@ -7,5 +7,13 @@
 <body>
 <h1>Test show website</h1>
 
+<p>It should show the name of the product</p>
+<ul th:each="p : ${category}">
+    <li>
+        <span th:text="${p.name}"/>
+    </li>
+
+</ul>
+
 </body>
 </html>

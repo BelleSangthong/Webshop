@@ -11,4 +11,7 @@ public class ProductService {
     ProductRepo repository;
 
 
+    public Object getCategory() {
+        return repository.findAll();
+    }
 }
