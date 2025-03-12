@@ -1,5 +1,5 @@
 # virtualenv
-env
+src/main/resources/env.properties
 
 HELP.md
 target/
