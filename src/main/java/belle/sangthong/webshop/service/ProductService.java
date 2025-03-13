@@ -17,7 +17,7 @@ public class ProductService {
         return repository.findAll();
     }
 
-    public void searchProduct(String name) {
-        repository.findByName(name);
+    public List<Product> searchProductByName(String name) {
+        return repository.findByName(name);
     }
 }

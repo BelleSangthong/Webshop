@@ -7,10 +7,15 @@
 <body>
 <h1>Test show website</h1>
 
-<form action="/search" method="post">
-    <p>Search for a product <input type="text" name="name"></p>
-    <p><input type="submit" value="Search"></p>
+<form th:action="@{/search}" method="post" th:object="${product}">
+    <p>Name:    <input type="text" th:field="*{name}">      </p>
+    <p>         <input type="submit" value="Search">           </p>
 </form>
+
+<!--<form action="/search" method="post">-->
+<!--    <p>Search for a product <input type="text" name="name"></p>-->
+<!--    <p><input type="submit" value="Search"></p>-->
+<!--</form>-->
 
 
 <p>Categories and products</p>

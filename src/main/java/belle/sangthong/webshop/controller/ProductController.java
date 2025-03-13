@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class ProductController {
 
@@ -23,11 +25,10 @@ public class ProductController {
 
     @PostMapping("/search")
     String searchProduct(Model model, String name) {
-        productService.searchProduct(name);
-        model.addAttribute("productlist", productService.getAll());
+        List<Product> products = productService.searchProductByName(name);
+        model.addAttribute("productlist", products);
         model.addAttribute("product", new Product());
         return "productpage";
-
     }
 
     @PostMapping("/product")
