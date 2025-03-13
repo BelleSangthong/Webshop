@@ -21,6 +21,15 @@ public class ProductController {
         return "productpage";
     }
 
+    @PostMapping("/search")
+    String searchProduct(Model model, String name) {
+        productService.searchProduct(name);
+        model.addAttribute("productlist", productService.getAll());
+        model.addAttribute("product", new Product());
+        return "productpage";
+
+    }
+
     @PostMapping("/product")
     String showCategory(Model model, Product product) {
         model.addAttribute("category", productService.getCategory());

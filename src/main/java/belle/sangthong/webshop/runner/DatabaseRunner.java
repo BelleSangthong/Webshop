@@ -19,9 +19,9 @@ public class DatabaseRunner implements CommandLineRunner {
 //        repository.save(new Product("Mjölk", 10, "Mejeri"));
 //        repository.save(new Product("Kaffe", 30, "Dryck"));
 
-        repository.deleteById(102);
-        repository.deleteById(103);
-        repository.deleteById(104);
-        repository.deleteById(105);
+//        repository.deleteById(102);
+//        repository.deleteById(103);
+//        repository.deleteById(104);
+//        repository.deleteById(105);
     }
 }
