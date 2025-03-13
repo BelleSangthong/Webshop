@@ -1,5 +1,6 @@
 package belle.sangthong.webshop.runner;
 
+import belle.sangthong.webshop.model.Product;
 import belle.sangthong.webshop.repository.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,6 +14,6 @@ public class DatabaseRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Test hello world");
+        repository.save(new Product("Banan", 12, "Frukt"));
     }
 }
