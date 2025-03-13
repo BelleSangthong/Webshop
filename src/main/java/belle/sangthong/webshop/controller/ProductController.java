@@ -17,7 +17,7 @@ public class ProductController {
     @GetMapping("/product")
     String getProductPage(Model model) {
         model.addAttribute("product", new Product());
-        model.addAttribute("category", productService.getCategory());
+        model.addAttribute("productlist", productService.getAll());
         return "productpage";
     }
 
@@ -32,7 +32,7 @@ public class ProductController {
 
     @PostMapping("/product")
     String showCategory(Model model, Product product) {
-        model.addAttribute("category", productService.getCategory());
+        model.addAttribute("product", productService.getAll());
         return "productpage";
     }
 

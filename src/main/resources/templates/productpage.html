@@ -13,10 +13,12 @@
 </form>
 
 
-<p>It should show the name of the product</p>
-<ul th:each="p : ${category}">
+<p>Categories and products</p>
+<ul th:each="p : ${productlist}">
     <li>
-        <span th:text="${p.category}"/>
+        <span th:text="${p.category}"/>,
+        <span th:text="${p.name}"/>
+
     </li>
 
 </ul>
