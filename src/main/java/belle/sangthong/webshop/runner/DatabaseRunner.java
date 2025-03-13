@@ -14,10 +14,14 @@ public class DatabaseRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        repository.save(new Product("Banan", 12, "Frukt"));
-        repository.save(new Product("Gurka", 20, "Grönsak"));
-        repository.save(new Product("Mjölk", 10, "Mejeri"));
-        repository.save(new Product("Kaffe", 30, "Dryck"));
+//        repository.save(new Product("Banan", 12, "Frukt"));
+//        repository.save(new Product("Gurka", 20, "Grönsak"));
+//        repository.save(new Product("Mjölk", 10, "Mejeri"));
+//        repository.save(new Product("Kaffe", 30, "Dryck"));
 
+        repository.deleteById(102);
+        repository.deleteById(103);
+        repository.deleteById(104);
+        repository.deleteById(105);
     }
 }
