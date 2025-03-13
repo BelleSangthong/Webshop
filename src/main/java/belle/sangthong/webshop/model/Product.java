@@ -6,14 +6,13 @@ import jakarta.persistence.*;
 @Table(name = "products")
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private double price;
     private String category;
 
-    public Product(Long id, String name, double price, String category) {
-        this.id = id;
+    public Product(String name, double price, String category) {
         this.name = name;
         this.price = price;
         this.category = category;
