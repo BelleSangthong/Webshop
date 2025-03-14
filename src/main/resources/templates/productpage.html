@@ -7,19 +7,10 @@
 <body>
 <h1>Test show website</h1>
 
-<form th:action="@{/search}" method="post" th:object="${product}">
-    <p>Name:    <input type="text" th:field="*{name}">      </p>
+<form th:action="@{/search}" method="post">
+    <p>Name:    <input type="text" name="name">      </p>
     <p>         <input type="submit" value="Search">           </p>
 </form>
-
-<!--<div>-->
-<!--    <h3>Produktsökning</h3>-->
-<!--    <ul>-->
-<!--        <th:block th:each="product : ${productlist}">-->
-<!--            <li th:text="${product.name}"></li>  &lt;!&ndash; Visa produktens namn &ndash;&gt;-->
-<!--        </th:block>-->
-<!--    </ul>-->
-<!--</div>-->
 
 
 <p>Categories and products</p>

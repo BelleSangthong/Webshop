@@ -7,9 +7,9 @@
 <body>
 <h1>Test show user page</h1>
 
-<form th:action="@{/searchuser}" method="post" th:object="${user}">
+<form th:action="@{/login}" method="post" th:object="${user}">
     <p>Name:    <input type="text" th:field="*{name}">      </p>
-    <p>         <input type="submit" value="Search">           </p>
+    <p>         <input type="submit" value="Submit">           </p>
 </form>
 
 </body>
