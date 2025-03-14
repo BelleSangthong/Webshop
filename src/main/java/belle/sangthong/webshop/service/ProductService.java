@@ -11,13 +11,13 @@ import java.util.List;
 public class ProductService {
 
     @Autowired
-    ProductRepo repository;
+    ProductRepo productRepo;
 
     public List<Product> getAll() {
-        return repository.findAll();
+        return productRepo.findAll();
     }
 
     public List<Product> searchProductByName(String name) {
-        return repository.findByName(name);
+        return productRepo.findByName(name);
     }
 }

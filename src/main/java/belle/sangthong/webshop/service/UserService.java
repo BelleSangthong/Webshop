@@ -10,10 +10,10 @@ import java.util.List;
 public class UserService {
 
     @Autowired
-    UserRepo repository;
+    UserRepo userRepo;
 
 
     public List<User> searchUserByName(String name) {
-        return repository.findByName(name);
+        return userRepo.findByName(name);
     }
 }
