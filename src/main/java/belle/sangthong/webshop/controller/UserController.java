@@ -23,7 +23,7 @@ public class UserController {
         return "userpage";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/webshop")
     String searchUser(Model model, String name) {
         User user = userService.login(name);
         model.addAttribute("productlist", productService.getAll());

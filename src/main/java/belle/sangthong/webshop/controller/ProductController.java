@@ -27,7 +27,7 @@ public class ProductController {
     String searchProduct(Model model, String name) {
         List<Product> products = productService.searchProductByName(name);
         model.addAttribute("productlist", products);
-        model.addAttribute("product", new Product());
+//        model.addAttribute("product", new Product());
         return "productpage";
     }
 
