@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome to the Webshop!</h1>
+    <div th:if="${user != null}">
+        <p>Hello, <span th:text="${user.name}">User</span>! Welcome back.</p>
+        <p>Feel free to explore our products.</p>
+    </div>
+
+    <div th:if="${user == null}">
+        <p>You're not logged in. Please <a href="/login">login</a> to continue.</p>
+    </div>
+
+    <div>
+        <!-- Here you can add links to other pages, like product categories or the cart -->
+        <a href="/products">Browse Products</a>
+        <a href="/cart">Go to Cart</a>
+    </div>
+
+    <div>
+        <a href="/logout">Logout</a>
+    </div>
+
+
+</body>
+</html>
