@@ -1,21 +1,17 @@
 package belle.sangthong.webshop.runner;
 
-import belle.sangthong.webshop.model.Product;
-import belle.sangthong.webshop.model.User;
-import belle.sangthong.webshop.repository.ProductRepo;
-import belle.sangthong.webshop.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DatabaseRunner implements CommandLineRunner {
-
-    @Autowired
-    ProductRepo productRepo;
-
-    @Autowired
-    UserRepo userRepo;
+//
+//    @Autowired
+//    ProductRepo productRepo;
+//
+//    @Autowired
+//    UserRepo userRepo;
 
     @Override
     public void run(String... args) throws Exception {
