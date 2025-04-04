@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class DatabaseRunner implements CommandLineRunner {
 
     @Autowired
-    UserRepo userRepo;
+    private UserRepo userRepo;
 
     @Override
     public void run(String... args) throws Exception {
