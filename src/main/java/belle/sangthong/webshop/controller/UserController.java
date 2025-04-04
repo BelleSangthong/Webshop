@@ -28,7 +28,7 @@ public class UserController {
             User loggedInUser = userService.findByName(user.getName());
             session.setAttribute("user", loggedInUser);
             model.addAttribute("message", userService.getWelcomeMessage(user.getName()));
-            return "welcome";
+            return "redirect:/welcome";
         } else {
             model.addAttribute("error", "Invalid username or password");
             return "login";
