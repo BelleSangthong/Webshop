@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class UserController {
@@ -23,16 +24,16 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute("user") User user, String password, Model model, HttpSession session) {
-        if (userService.authenticate(user.getName(), user.getPassword())) {
-            User loggedInUser = userService.findByName(user.getName());
-            session.setAttribute("user", loggedInUser);
-            model.addAttribute("message", userService.getWelcomeMessage(user.getName()));
-            return "redirect:/welcome";
-        } else {
-            model.addAttribute("error", "Invalid username or password");
-            return "login";
-        }
+    public String login(@RequestParam String name, @RequestParam String password, Model model, HttpSession session) {
+       if (userService.authenticate(name, password)) {
+           User loggedInUser = userService.findByName(name);
+           session.setAttribute("user", loggedInUser);
+              model.addAttribute("message", userService.getWelcomeMessage(name));
+              return "redirect:/welcome";
+       } else {
+           model.addAttribute("error", "Invalid username or password");
+           return "login";
+       }
     }
 
     @GetMapping("/welcome")
