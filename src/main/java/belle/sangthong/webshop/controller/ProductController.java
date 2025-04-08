@@ -20,10 +20,15 @@ public class ProductController {
 
     @PostMapping("/products")
     public String searchProduct(@RequestParam String name, Model model) {
-        Product product = productService.getProduct(name);
-        model.addAttribute("product", product);
+        List<Product> products = productService.searchProductsByName(name);
+        model.addAttribute("products", products);
+
+        List<String> categories = productService.getAllCategories();
+        model.addAttribute("categories", categories);
+
         return "product";
     }
+
 
     @GetMapping("/products")
     public String showProductPage(Model model) {
@@ -31,5 +36,17 @@ public class ProductController {
         model.addAttribute("categories", categories);
         return "product";
     }
+
+    @GetMapping("/products/category")
+    public String showProductsByCategory(@RequestParam String category, Model model) {
+        List<Product> products = productService.getProductsByCategory(category);
+        model.addAttribute("products", products);
+
+        List<String> categories = productService.getAllCategories();
+        model.addAttribute("categories", categories);
+
+        return "product";
+    }
+
 
 }

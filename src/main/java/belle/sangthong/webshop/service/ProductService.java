@@ -16,10 +16,6 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepo;
 
-    public Product getProduct(String name) {
-        return productRepo.findByName(name);
-    }
-
     public List<String> getAllCategories() {
         List<Product> allProducts = productRepo.findAll();
         List<String> categories = new ArrayList<>();
@@ -33,4 +29,31 @@ public class ProductService {
 
         return categories;
     }
+
+    public List<Product> getProductsByCategory(String category) {
+        List<Product> allProducts = productRepo.findAll();
+        List<Product> productsByCategory = new ArrayList<>();
+
+        for (Product product : allProducts) {
+            if (product.getCategory() != null && product.getCategory().equalsIgnoreCase(category)) {
+                productsByCategory.add(product);
+            }
+        }
+
+        return productsByCategory;
+    }
+
+    public List<Product> searchProductsByName(String name) {
+        List<Product> allProducts = productRepo.findAll();
+        List<Product> matches = new ArrayList<>();
+
+        for (Product product : allProducts) {
+            if (product.getName() != null && product.getName().toLowerCase().contains(name.toLowerCase())) {
+                matches.add(product);
+            }
+        }
+
+        return matches;
+    }
+
 }

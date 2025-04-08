@@ -22,15 +22,22 @@
 
 
 
-<div th:if="${product != null}">
-    <p>Product: <span th:text="${product.name}"></span></p>
-    <p>Price: <span th:text="${product.price + ' kr'}"></span></p>
+<div th:if="${products != null}">
+    <div th:each="product : ${products}">
+        <p>Product: <span th:text="${product.name}"></span></p>
+        <p>Price: <span th:text="${product.price + ' kr'}"></span></p>
 
-    <form action="/cart/add" method="post">
-        <input type="hidden" name="productId" th:value="${product.id}" />
-        <input type="submit" value="Add" />
-    </form>
+        <form action="/cart/add" method="post">
+            <input type="hidden" name="productId" th:value="${product.id}" />
+            <input type="submit" value="Add" />
+        </form>
+
+        <hr/>
+    </div>
 </div>
+
+
+
 
 
 
