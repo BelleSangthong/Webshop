@@ -20,7 +20,10 @@ public class DatabaseRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-//        productRepo.save(new Product("Banan", 12));
+//        productRepo.save(new Product("Banan", 12, "Fruit"));
+//        productRepo.save(new Product("Gurka", 20, "Vegetable"));
+//        productRepo.save(new Product("Kaffe", 30, "Drink"));
+//        productRepo.save(new Product("Äpple", 15, "Fruit"));
 
 //        userRepo.save(new User("Belle", "1234"));
 //        userRepo.save(new User("Jimmi", "1111"));

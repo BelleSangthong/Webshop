@@ -12,14 +12,24 @@ public class Product {
     private Long id;
     private String name;
     private int price;
+    private String category;
 
 
     public Product() {
     }
 
-    public Product(String name, int price) {
+    public Product(String name, int price, String category) {
         this.name = name;
         this.price = price;
+        this.category = category;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public Long getId() {
