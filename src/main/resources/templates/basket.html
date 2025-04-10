@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Kundvagn</title>
+</head>
+<body>
+<h1>Din kundvagn</h1>
+
+<table>
+    <tr th:each="item : ${items}">
+        <td th:text="${item.product.name}"></td>
+        <td>
+            <form th:action="@{/basket/update}" method="post">
+                <input type="hidden" name="productId" th:value="${item.product.id}" />
+                <input type="number" name="quantity" th:value="${item.quantity}" min="1" />
+                <button type="submit">Update</button>
+            </form>
+        </td>
+        <td th:text="${item.product.price} + ' kr'"></td>
+        <td>
+            <form th:action="@{/basket/remove}" method="post">
+                <input type="hidden" name="productId" th:value="${item.product.id}" />
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+</table>
+
+<p><strong>Total amount:</strong> <span th:text="${total} + ' kr'"></span></p>
+
+<form th:action="@{/basket/clear}" method="post">
+    <button type="submit">Empty the cart</button>
+</form>
+
+<a href="/products">Back to the products</a>
+<a href="/checkout">Proceed to Checkout</a>
+
+</body>
+</html>

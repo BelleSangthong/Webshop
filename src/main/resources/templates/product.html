@@ -20,25 +20,20 @@
     </li>
 </ul>
 
-
-
 <div th:if="${products != null}">
     <div th:each="product : ${products}">
         <p>Product: <span th:text="${product.name}"></span></p>
         <p>Price: <span th:text="${product.price + ' kr'}"></span></p>
 
-        <form action="/cart/add" method="post">
+        <form th:action="@{/basket/add}" method="post">
             <input type="hidden" name="productId" th:value="${product.id}" />
+            <input type="number" name="quantity" value="1" min="1" />
             <input type="submit" value="Add" />
         </form>
 
         <hr/>
     </div>
 </div>
-
-
-
-
 
 
 </body>

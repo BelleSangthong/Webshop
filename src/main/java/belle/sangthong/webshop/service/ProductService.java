@@ -56,4 +56,8 @@ public class ProductService {
         return matches;
     }
 
+    public Product findById(Long id) {
+        return productRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Produkt hittades inte"));
+    }
 }
