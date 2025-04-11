@@ -33,7 +33,11 @@
 </form>
 
 <a href="/products">Back to the products</a>
-<a href="/checkout">Proceed to Checkout</a>
+
+<form th:action="@{/basket/checkout}" method="post">
+    <button type="submit">Checkout</button>
+</form>
+
 
 </body>
 </html>

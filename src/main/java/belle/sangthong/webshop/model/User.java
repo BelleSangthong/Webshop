@@ -2,8 +2,6 @@ package belle.sangthong.webshop.model;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 public class User {
     @Id
@@ -12,10 +10,7 @@ public class User {
     private String name;
     private String password;
 
-//    @OneToMany(mappedBy = "user")
-//    private List<Order> orders;
-
-    public User() {
+    public User() {         // tom konstruktor måste alltid finnas pga JPA
     }
 
     public User(String name, String password) {
@@ -35,7 +30,7 @@ public class User {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String password) {      //kan behålla kvar denna setter ifall man vill ändra lösenord på en användare i framtiden
         this.password = password;
     }
 }

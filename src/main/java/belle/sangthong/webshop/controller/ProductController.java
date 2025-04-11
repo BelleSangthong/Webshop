@@ -29,7 +29,6 @@ public class ProductController {
         return "product";
     }
 
-
     @GetMapping("/products")
     public String showProductPage(Model model) {
         List<String> categories = productService.getAllCategories();
@@ -47,6 +46,4 @@ public class ProductController {
 
         return "product";
     }
-
-
 }

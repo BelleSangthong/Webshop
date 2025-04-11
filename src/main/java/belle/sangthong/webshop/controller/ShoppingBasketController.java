@@ -52,4 +52,10 @@ public class ShoppingBasketController {
         basketService.clearBasket();
         return "redirect:/basket";
     }
+
+    @PostMapping("/checkout")
+    public String checkoutBasket() {
+        basketService.checkout();
+        return "orderconfirmation";
+    }
 }

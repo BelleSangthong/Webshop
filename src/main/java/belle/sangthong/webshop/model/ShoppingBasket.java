@@ -4,20 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingBasket {
-    private List<ShoppingBasketItem> items = new ArrayList<>();
+    private List<OrderLine> items = new ArrayList<>();
 
     public void addItem(Product product, int quantity) {
-        for (ShoppingBasketItem item : items) {
+        for (OrderLine item : items) {
             if (item.getProduct().getId().equals(product.getId())) {
                 item.setQuantity(item.getQuantity() + quantity);
                 return;
             }
         }
-        items.add(new ShoppingBasketItem(product, quantity));
+        items.add(new OrderLine(product, quantity));
     }
 
     public void updateItemQuantity(Long productId, int newQuantity) {
-        for (ShoppingBasketItem item : items) {
+        for (OrderLine item : items) {
             if (item.getProduct().getId().equals(productId)) {
                 item.setQuantity(newQuantity);
                 return;
@@ -29,7 +29,7 @@ public class ShoppingBasket {
         items.removeIf(item -> item.getProduct().getId().equals(productId));
     }
 
-    public List<ShoppingBasketItem> getItems() {
+    public List<OrderLine> getItems() {
         return items;
     }
 
@@ -38,8 +38,13 @@ public class ShoppingBasket {
     }
 
     public double getTotal() {
-        return items.stream()
-                .mapToDouble(ShoppingBasketItem::getTotalPrice)
-                .sum();
+        double total = 0.0;
+
+        for (OrderLine item : items) {
+            total += item.getProduct().getPrice() * item.getQuantity();
+        }
+
+        return total;
     }
+
 }

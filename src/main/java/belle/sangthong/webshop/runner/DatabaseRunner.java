@@ -24,7 +24,7 @@ public class DatabaseRunner implements CommandLineRunner {
 //        productRepo.save(new Product("Gurka", 20, "Vegetable"));
 //        productRepo.save(new Product("Kaffe", 30, "Drink"));
 //        productRepo.save(new Product("Äpple", 15, "Fruit"));
-
+//
 //        userRepo.save(new User("Belle", "1234"));
 //        userRepo.save(new User("Jimmi", "1111"));
 
